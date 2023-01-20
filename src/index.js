@@ -1,25 +1,26 @@
-var http = require("http");
-
-const httpServer = http.createServer(handleServer);
-
-let statusCode = 200;
-function handleServer(req, res) {
-    if(req.url === "/"){
-        res.write("Welcome to my server at 8081..");
-        res.end();
+const express = require("express");
+const app = express();
+// app.use(express.json());
+const obj = {
+    phone: '18602100000',
+    email: 'guestcaredominos@jublfood.com'
+  }
+app.get("/welcome", (req, res)=>{
+    if(req.url != "/welocme"){
+        return res.status(404).send("Invalid request...")
     }
-    if(req.url === "/welcome"){
-        res.write("Should serve the content of type text/plain")
-        res.end();
+    res.setHeader('Content-Type', 'text/plain');
+    res.status(200).send("Welcome to Dominos!");
+})
+ 
+
+app.get("/contact", (req, res)=>{
+    if(req.url != "/contact"){
+        return res.status(404).send("Invalid request...")
     }
-    if(req.url === "/contact"){
-        res.write("Returned status should be 200")
-        res.end();
-    } 
-}
-httpServer.listen(8081,statusCode, ()=>{
-    console.log('listening server at port 8081...');
-    console.log('status code to get request... 200');
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(obj);
 });
-
-module.exports = httpServer;
+app.listen(8081, ()=>{
+    console.log("listening to the port at 8081...");
+})

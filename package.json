@@ -1,7 +1,6 @@
 {
-  "name": "node-server-testing",
+  "name": "server-testing",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha '__tests__/*.js' --reporter mochawesome --recursive  --timeout 60000 --exit",
@@ -10,11 +9,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mochawesome": "6.1.1"
+    "express": "^4.18.2",
+    "mochawesome": "6.1.1",
+    "nodemon": "^2.0.20"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^8.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandece348/Node-Server-Dominos-needs-your-help---Express---REST-API-Express---Simple-Ser---twcqn35wsoqz.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/anandece348/Node-Server-Dominos-needs-your-help---Express---REST-API-Express---Simple-Ser---twcqn35wsoqz/issues"
+  },
+  "homepage": "https://github.com/anandece348/Node-Server-Dominos-needs-your-help---Express---REST-API-Express---Simple-Ser---twcqn35wsoqz#readme",
+  "description": ""
 }
